@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Now Playing</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="albums">Albums</string>
+    <string name="songs">songs</string>
+    <string name="artists">Artists</string>
+    <string name="description_for_now_playing_screen">This Activity Used to show you the NowPlaying Track</string>
+    <string name="description_for_albums_screen">This Activity used to show you all albums found at your devices</string>
+    <string name="description_for_artists_screen">This Activity used to show you all tracks found at your device by artists</string>
+    <string name="description_for_songs_screen">This Activity used to show you all tracks found at your device</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="track_name">Track Name</string>
+    <string name="album_name">Album Name</string>
+    <string name="song_name">Song name</string>
+    <string name="albums_title">Albums</string>
+    <string name="artists_title">Artists</string>
+    <string name="now_playing_title">Now Playing</string>
+</resources>
