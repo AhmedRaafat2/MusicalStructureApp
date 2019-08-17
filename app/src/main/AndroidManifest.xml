@@ -13,7 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".AlbumsActivity" android:label="@string/albums_title"/>
         <activity android:name=".ArtistActivity" android:label="@string/artists_title"/>
-        <activity android:name=".SongsActivity" android:label="@string/albums_title"/>
+        <activity android:name=".SongsActivity" android:label="@string/songs_title"/>
         <activity android:name=".NowPlaying" android:label="@string/now_playing_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

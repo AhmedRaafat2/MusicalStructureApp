@@ -29,14 +29,17 @@ public class NowPlaying extends AppCompatActivity implements View.OnClickListene
             case R.id.songs_btn:
                 Intent intent = new Intent(this,SongsActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.artists_btn:
                 Intent intent2 = new Intent(this,ArtistActivity.class);
                 startActivity(intent2);
+                finish();
                 break;
             case R.id.albums_btn:
                 Intent intent3 = new Intent(this,AlbumsActivity.class);
                 startActivity(intent3);
+                finish();
                 break;
         }
     }
