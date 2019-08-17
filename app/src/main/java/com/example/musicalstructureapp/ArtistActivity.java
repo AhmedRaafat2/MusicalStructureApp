@@ -1,18 +1,22 @@
 package com.example.musicalstructureapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
 import java.util.ArrayList;
 
 public class ArtistActivity extends AppCompatActivity implements View.OnClickListener {
     private Button songs_btn;
     private Button albums_btn;
     private Button now_playing_btn;
-    private GridView artists_list;
+    private RecyclerView artists_list;
     private ArrayList<Artist> artists = new ArrayList<>();
 
     @Override
@@ -27,31 +31,40 @@ public class ArtistActivity extends AppCompatActivity implements View.OnClickLis
         now_playing_btn.setOnClickListener(this);
         albums_btn.setOnClickListener(this);
 
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
-        artists.add(new Artist("Artist Name","Track Name",R.drawable.music));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
+        artists.add(new Artist("Artist Name","Track Name",R.drawable.music2));
 
-        ArtistAdapter artistAdapter = new ArtistAdapter(this,R.layout.artist_item,artists);
+        ArtistAdapter artistAdapter = new ArtistAdapter(this,artists);
+        artists_list.setLayoutManager(new GridLayoutManager(this,3,RecyclerView.VERTICAL,false));
         artists_list.setAdapter(artistAdapter);
     }
 

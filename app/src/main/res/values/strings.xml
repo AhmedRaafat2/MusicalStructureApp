@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Now Playing</string>
+    <string name="app_name">Musical App</string>
     <string name="now_playing">Now Playing</string>
     <string name="albums">Albums</string>
     <string name="songs">songs</string>

@@ -1,75 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
+    android:padding="5dp"
     tools:context=".AlbumsActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/now_playing_btn"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/now_playing"
+        app:layout_constraintEnd_toStartOf="@id/songs_btn"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/now_playing_btn"
-            style="@style/ButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:text="@string/now_playing"
-            app:layout_constraintEnd_toStartOf="@id/songs_btn"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/songs_btn"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/songs"
+        app:layout_constraintBottom_toBottomOf="@id/now_playing_btn"
+        app:layout_constraintEnd_toStartOf="@id/artists_btn"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/now_playing_btn"
+        app:layout_constraintTop_toTopOf="@id/now_playing_btn" />
 
-        <Button
-            android:id="@+id/songs_btn"
-            style="@style/ButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:text="@string/songs"
-            app:layout_constraintBottom_toBottomOf="@id/now_playing_btn"
-            app:layout_constraintEnd_toStartOf="@id/artists_btn"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/now_playing_btn"
-            app:layout_constraintTop_toTopOf="@id/now_playing_btn" />
-
-        <Button
-            android:id="@+id/artists_btn"
-            style="@style/ButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:text="@string/artists"
-            app:layout_constraintBottom_toBottomOf="@id/now_playing_btn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@id/songs_btn"
-            app:layout_constraintTop_toTopOf="@id/now_playing_btn" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/artists_btn"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/artists"
+        app:layout_constraintBottom_toBottomOf="@id/now_playing_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/songs_btn"
+        app:layout_constraintTop_toTopOf="@id/now_playing_btn" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="@string/description_for_albums_screen" />
+        android:text="@string/description_for_albums_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/artists_btn" />
 
-    <GridView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/albums_list"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numColumns="3"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,17 +2,20 @@ package com.example.musicalstructureapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 public class SongsActivity extends AppCompatActivity implements View.OnClickListener {
     private Button artists_btn;
     private Button albums_btn;
     private Button now_playing_btn;
-    private ListView songs_list;
+    private RecyclerView songs_list;
     private ArrayList<Song> songs = new ArrayList<>();
 
     @Override
@@ -27,25 +30,39 @@ public class SongsActivity extends AppCompatActivity implements View.OnClickList
         albums_btn.setOnClickListener(this);
         now_playing_btn.setOnClickListener(this);
 
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
-        songs.add(new Song("Track Name","Song Artist",R.drawable.music));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name2","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name3","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
+        songs.add(new Song("Track Name","Song Artist",R.drawable.music2));
 
-        SongAdapter songAdapter = new SongAdapter(this,R.layout.song_item,songs);
+        SongAdapter songAdapter = new SongAdapter(this,songs);
+        songs_list.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
         songs_list.setAdapter(songAdapter);
     }
 

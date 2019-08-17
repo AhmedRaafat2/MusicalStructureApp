@@ -1,18 +1,19 @@
 package com.example.musicalstructureapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
 import java.util.ArrayList;
 
 public class AlbumsActivity extends AppCompatActivity implements View.OnClickListener {
     private Button songs_btn;
     private Button artists_btn;
     private Button now_playing_btn;
-    private GridView albums_list;
+    private RecyclerView albums_list;
     private ArrayList<Album> albums = new ArrayList<>();
 
     @Override
@@ -27,33 +28,41 @@ public class AlbumsActivity extends AppCompatActivity implements View.OnClickLis
         artists_btn.setOnClickListener(this);
         now_playing_btn.setOnClickListener(this);
 
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
-        albums.add(new Album("Album Name","Artist Name", R.drawable.music ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
+        albums.add(new Album("Album Name","Artist Name", R.drawable.music2 ));
 
-        AlbumAdapter albumAdapter = new AlbumAdapter(this,R.layout.album_item,albums);
+        AlbumAdapter albumAdapter = new AlbumAdapter(this,albums);
+        albums_list.setLayoutManager(new GridLayoutManager(this,3,RecyclerView.VERTICAL,false));
         albums_list.setAdapter(albumAdapter);
     }
 
